@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" filepath="$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" filepath="$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-web/ccl-web.iml" filepath="$PROJECT_DIR$/ccl-web/ccl-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cclTest.iml" filepath="$PROJECT_DIR$/cclTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/common-utils/common-utils.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ccl-web:war">
+    <output-path>$PROJECT_DIR$/ccl-web/target</output-path>
+    <root id="archive" name="ccl-web.war">
+      <element id="artifact" artifact-name="ccl-web:war exploded" />
+    </root>
+  </artifact>
+</component>
