@@ -13,6 +13,8 @@
         <module>ccl-web</module>
         <module>ccl-jetty</module>
         <module>ccl-elasticsearch</module>
+        <module>ccl-java_encryption</module>
+        <module>ccl-javaCreateDoc</module>
     </modules>
 
 

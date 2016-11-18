@@ -176,4 +176,31 @@ public class EsTest {
             }
         }
     }
+
+    @Test
+    public void test3(){
+        //查询多个id的值
+        MultiGetResponse multiGetItemResponses = client.prepareMultiGet()
+                .add("users", "user", "77")
+                .add("users", "user", "2", "3", "11")
+                .get();
+        for (MultiGetItemResponse itemResponse : multiGetItemResponses) {
+            GetResponse response = itemResponse.getResponse();
+            if (response.isExists()) {
+                String json = response.getSourceAsString();
+                System.out.println(json);
+            }
+        }
+        //搜索
+        SearchResponse response = client.prepareSearch("users")//可以同时搜索多个索引prepareSearch("index","index2")
+                .setTypes("user")//可以同时搜索多个类型
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+                .setQuery(QueryBuilders.termQuery("name", "fox"))                 // Query
+                .setPostFilter(QueryBuilders.rangeQuery("age").from(0).to(80))     // Filter
+                .setFrom(0).setSize(20).setExplain(true)
+                .execute()
+                .actionGet();
+        forSearchResponse(response);
+        System.out.println("总共查询到有：" + response.getHits().getTotalHits());
+    }
 }
