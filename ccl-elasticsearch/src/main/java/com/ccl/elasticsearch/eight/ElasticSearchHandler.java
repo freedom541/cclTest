@@ -106,7 +106,7 @@ public class ElasticSearchHandler {
         List<String> jsondata = DataFactory.getInitJsonData();
         String indexname = "indexdemo";
         String type = "typedemo";
-        //esHandler.createIndexResponse(indexname, type, jsondata);
+        esHandler.createIndexResponse(indexname, type, jsondata);
         //查询条件
         QueryBuilder queryBuilder = QueryBuilders.termQuery("name", "粒");
         /*QueryBuilder queryBuilder = QueryBuilders.boolQuery()
@@ -117,4 +117,5 @@ public class ElasticSearchHandler {
             System.out.println("(" + medicine.getId() + ")药品名称:" +medicine.getName() + "\t\t" + medicine.getFunction());
         }
     }
+
 }
