@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" filepath="$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-javaCreateDoc/ccl-javaCreateDoc.iml" filepath="$PROJECT_DIR$/ccl-javaCreateDoc/ccl-javaCreateDoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-java_encryption/ccl-java_encryption.iml" filepath="$PROJECT_DIR$/ccl-java_encryption/ccl-java_encryption.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-javatest/ccl-javatest.iml" filepath="$PROJECT_DIR$/ccl-javatest/ccl-javatest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" filepath="$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-web/ccl-web.iml" filepath="$PROJECT_DIR$/ccl-web/ccl-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/cclTest.iml" filepath="$PROJECT_DIR$/cclTest.iml" />

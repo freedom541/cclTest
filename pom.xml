@@ -15,6 +15,7 @@
         <module>ccl-elasticsearch</module>
         <module>ccl-java_encryption</module>
         <module>ccl-javaCreateDoc</module>
+        <module>ccl-javatest</module>
     </modules>
 
 
