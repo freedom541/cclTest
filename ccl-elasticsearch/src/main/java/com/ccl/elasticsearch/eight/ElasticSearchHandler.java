@@ -25,7 +25,7 @@ public class ElasticSearchHandler {
 
     public ElasticSearchHandler(){
         //使用本机做为节点
-        this("49.50.39.218");
+        this("192.168.10.6");
     }
 
     public ElasticSearchHandler(String ipAddress){
@@ -104,11 +104,11 @@ public class ElasticSearchHandler {
     public static void main(String[] args) {
         ElasticSearchHandler esHandler = new ElasticSearchHandler();
         List<String> jsondata = DataFactory.getInitJsonData();
-        String indexname = "indexdemo";
-        String type = "typedemo";
+        String indexname = "monitor";
+        String type = "ecs";
         esHandler.createIndexResponse(indexname, type, jsondata);
         //查询条件
-        QueryBuilder queryBuilder = QueryBuilders.termQuery("name", "粒");
+        QueryBuilder queryBuilder = QueryBuilders.termQuery("instanceId", "i-j6c8xqe2t2d7ucsh0nmu");
         /*QueryBuilder queryBuilder = QueryBuilders.boolQuery()
           .must(QueryBuilders.termQuery("id", 1));*/
         List<Medicine> result = esHandler.searcher(queryBuilder, indexname, type);

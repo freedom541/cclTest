@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="ccl-java_encryption" />
         <module name="ccl-javaCreateDoc" />
-        <module name="ccl-javatest" />
         <module name="ccl-jetty" />
         <module name="common-utils" />
         <module name="ddddd" />
@@ -43,12 +42,19 @@
         <processorPath useClasspath="true" />
         <module name="ccl-elasticsearch" />
       </profile>
+      <profile default="false" name="Annotation profile for ccl-javatest" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-javatest" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ccl-elasticsearch" target="1.7" />
       <module name="ccl-java_encryption" target="1.5" />
       <module name="ccl-javaCreateDoc" target="1.5" />
-      <module name="ccl-javatest" target="1.5" />
+      <module name="ccl-javatest" target="1.7" />
       <module name="ccl-jetty" target="1.5" />
       <module name="ccl-web" target="1.6" />
       <module name="cclTest" target="1.5" />

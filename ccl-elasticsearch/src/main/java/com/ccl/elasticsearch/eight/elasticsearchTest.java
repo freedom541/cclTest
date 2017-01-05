@@ -31,7 +31,8 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 public class ElasticsearchTest {
     public static Client getClient(){
         //使用本机做为节点
-        return getClient("49.50.39.218");
+        //return getClient("49.50.39.218");
+        return getClient("192.168.10.6");
     }
 
     public static Client getClient(String ipAddress){
@@ -174,4 +175,57 @@ public class ElasticsearchTest {
         DeleteIndexRequest delete = new DeleteIndexRequest("feng");
         ElasticsearchTest.getClient().admin().indices().delete(delete);
     }
+
+
+
+    @Test
+    public void testWGUpdate(){
+        UpdateRequest updateRequest = new UpdateRequest();
+        updateRequest.index("wg_monitor");
+        updateRequest.type("ecs");
+        updateRequest.id("i-2zedygvja2gvmuidrotx2016-11-30T01:00:00ZInternetRX");
+        try {
+            updateRequest.doc(jsonBuilder()
+                    .startObject()
+                    .field("instanceId", "i-bp1clmtcidgq5lplwbru")
+                    .endObject());
+            ElasticsearchTest.getClient().update(updateRequest).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void testWGSearch(){
+        GetResponse response = ElasticsearchTest.getClient().prepareGet("wg_monitor", "ecs", "d-2zei8fd8lio3b6uo4zl72016-11-30T11:00:00ZBPSTotal").get();
+        Map<String, Object> source = response.getSource();
+        long version = response.getVersion();
+        String indexName = response.getIndex();
+        String type = response.getType();
+        String id = response.getId();
+    }
+
+    @Test
+    public void testWGAdd(){
+        IndexResponse response = null;
+        try {
+            response = ElasticsearchTest.getClient()
+                    .prepareIndex("monitor", "ecs", "1")
+                    .setSource(//这里可以直接用json字符串
+                            jsonBuilder().startObject()
+                                    .field("instanceId", "i-j6c8xqe2t2d7ucsh0nmu")
+                                    .endObject()).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("index:"+response.getIndex()
+                +" insert doc id:"+response.getId()
+                +" result:"+response.isCreated());
+    }
+
 }

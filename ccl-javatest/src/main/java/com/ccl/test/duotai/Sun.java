@@ -7,21 +7,12 @@ public class Sun extends Father {
     {
         bean = this.getClass().getName();
     }
-    private String action;
     private String name;
 
     @Override
     public String getClassName(){
-        return "com.ccl.test.duotai." + action;
+        return "com.ccl.test.duotai." + super.getAction();
     }
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
     public String getName() {
         return name;
     }
@@ -33,7 +24,7 @@ public class Sun extends Father {
     @Override
     public String toString() {
         return "Sun{" +
-                "action='" + action + '\'' +
+                "action='" + super.getAction() + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }
