@@ -1,0 +1,38 @@
+.rmx, .je_hide, .je_show, .je_help {
+text-align: right; font-size: x-small; cursor: pointer;
+}
+.je_disabled {
+    text-align: right; font-size: x-small; cursor: help; color: grey;
+}
+.je_topcontrols {
+text-align: right; font-size: x-small; vertical-align: middle;padding-left: 10px;
+}
+span:hover.je_userkey {
+    border-style: solid;
+    border-color: #444444;
+    border-width: 1px;
+}
+.je_userkey {
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+}
+
+.je_helpdiv {
+}
+
+
+.je_foreground {
+    background-color: white;
+}
+
+.je_background {
+    background-color: "#f0f0ff";
+}
+
+.je_field_label {
+	width: 140px;
+	display: inline-block;
+	color: #164;
+	cursor: pointer;
+}

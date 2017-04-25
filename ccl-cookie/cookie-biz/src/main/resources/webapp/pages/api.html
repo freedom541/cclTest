@@ -1,0 +1,345 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>应用调试</title>
+    <link rel="stylesheet" href="../styles/metro-green/easyui.css">
+    <link rel="stylesheet" href="../styles/icon.css">
+    <link rel="stylesheet" href="../styles/style.css"/>
+    <link rel="stylesheet" href="../styles/jsonwidget.css"/>
+    <link rel="stylesheet" href="../styles/codemirror.css"/>
+    <link rel="stylesheet" href="../styles/eclipse.css"/>
+    <link rel="stylesheet" href="../styles/api.css"/>
+
+    <script type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../scripts/i18n/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../scripts/json2.js"></script>
+    <script type="text/javascript" src="../scripts/form2json.js"></script>
+    <script type="text/javascript" src="../scripts/helpJSONView.js"></script>
+    <script type="text/javascript" src="../scripts/codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="../scripts/codemirror/active-line.js"></script>
+    <script type="text/javascript"
+            src="../scripts/codemirror/mark-selection.js"></script>
+    <script type="text/javascript" src="../scripts/codemirror/javascript.js"></script>
+    <script type="text/javascript" src="../scripts/jsonedit.js"></script>
+    <script type="text/javascript" src="../scripts/api.js"></script>
+    <script type="text/javascript">
+        $().ready(
+                function () {
+
+                    function getParameter(param) {
+                        var query = window.location.search;//获取URL地址中？后的所有字符
+                        var iLen = param.length;//获取你的参数名称长度
+                        var iStart = query.indexOf(param);//获取你该参数名称的其实索引
+                        if (iStart == -1)//-1为没有该参数
+                            return "";
+                        iStart += iLen + 1;
+                        var iEnd = query.indexOf("&", iStart);//获取第二个参数的其实索引
+                        if (iEnd == -1)//只有一个参数
+                            return query.substring(iStart);//获取单个参数的参数值
+                        return query.substring(iStart, iEnd);//获取第二个参数的值
+                    }
+
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        minLength: {
+                            validator: function (value, param) {
+                                return value.length >= param[0];
+                            },
+                            message: '请最少输入{0}个字符'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        maxLength: {
+                            validator: function (value, param) {
+                                return value.length <= param[0];
+                            },
+                            message: '请输入最多{0}个字符'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        pattern: {
+                            validator: function (value, param) {
+                                return param[0].test(value);
+                            },
+                            message: '请输入一个符合 {0} 格式的字符串'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        number: {
+                            validator: function (value, param) {
+                                return /^-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/
+                                        .test(value);
+                            },
+                            message: '请输入合法的数字'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        date: {
+                            validator: function (value, param) {
+                                return /^\d{4}\-\d{2}\-\d{2}$/.test(value);
+                            },
+                            message: '请输入合法的日期'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        datetime: {
+                            validator: function (value, param) {
+                                return /^\d{4}\-\d{2}\-\d{2}T\d{2}:\d{2}(:\d{2})Z?$/
+                                        .test(value);
+                            },
+                            message: '请输入合法的日期时间'
+                        }
+                    });
+                    $.extend($.fn.validatebox.defaults.rules, {
+                        time: {
+                            validator: function (value, param) {
+                                return /^\d{2}:\d{2}(:\d{2}(\.\d{3})?)?$/
+                                        .test(value);
+                            },
+                            message: '请输入合法的时间'
+                        }
+                    });
+
+                    var baseURL=getParameter("baseURL");
+                    if(""==baseURL){
+                        baseURL="../";
+                    }
+
+                    var workerName=getParameter("workerName");
+                    $("head title").text(workerName);
+
+                    new api(baseURL);
+
+                });
+    </script>
+    <style type="text/css">
+        .CodeMirror { font-size:13px}
+    </style>
+</head>
+<body class="easyui-layout">
+<div data-options="region:'north',border:false"
+     style="background: #f1f3e9">
+    <div id="top">
+        <div id="topbar">
+            <ul class="topmenu">
+                <li class="page_item page-item-12"><a href="/pages/dashboard.html">控制台</a></li>
+                <li class="page_item page-item-12"><a href="/pages/api.html">应用调试</a></li>
+                <li class="page_item page-item-12"><a href="/pages/config-admin.html">配置管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="page">
+        <div id="header">
+            <div id="blogname">
+                <h2>
+                    <a href="/pages/api.html">应用调试</a>
+                </h2>
+
+                <p>&nbsp;&nbsp;提供居于restful的api的调试功能</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="region:'west',split:true,title:'动作'"
+     style="width: 320px; overflow: hidden;">
+    <div style="background-color: #F1F3E9">
+        <a id="api_collapse_all_btn" href="javascript:void(0)"
+           class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-application-osx'">合并</a>
+        <a id="api_expand_all_btn" href="javascript:void(0)"
+           class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-application-osx-cascade'">展开</a>
+       <!-- <a id="api_show_history_btn" href="javascript:void(0)"
+           class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-database-save'">历史</a>-->
+        <a id="api_show_tree_btn" href="javascript:void(0)"
+           class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-back'"
+           style="display: none;">返回</a>
+        <a id="api_cancel_btn"
+           href="javascript:void(0)" class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-cancel'" style="display: none;">取消</a>
+        <a id="api_execute_btn"
+           href="javascript:void(0)" class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-application-go'" style="display: none;">执行</a>
+        <a id="api_module_enable_btn"
+           href="javascript:void(0)" class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-ok'" style="display: none;">启用</a>
+        <a id="api_module_disable_btn"
+           href="javascript:void(0)" class="easyui-linkbutton"
+           data-options="toggle:true,plain:true,group:'g1',iconCls:'icon-no'" style="display: none;">禁用</a>
+    </div>
+    <div id="api_server_listdiv"
+         style="overflow: auto; height: 95%; "></div>
+    <div id="api_action_treediv" style="overflow: auto; height: 95%;display: none;"></div>
+    <div id="api_action_historydiv"
+         style="overflow: auto; height: 95%; display: none;"></div>
+</div>
+<div data-options="region:'center',title:'请求'" style="padding: 10px">
+    <div id="api_req_warningdiv"></div>
+    <div id="api_reqdiv">
+        <div title="表单">
+            <form method='POST' id="api_req_form">
+                <div id="api_req_formdiv" style="padding: 10px"></div>
+            </form>
+        </div>
+        <div title="源码">
+            <form method='POST' id="api_req_sourcetextform">
+					<textarea id="api_req_sourcetextarea" rows="30" cols="80"
+                              name="sourcearea">
+					</textarea>
+            </form>
+        </div>
+        <!-- <div title="schema表单">
+            <div id="api_req_schemaformdiv" style="text-background: white">
+            </div>
+        </div> -->
+        <div title="定义">
+            <div id="api_req_schemaformdiv" style="display: none;"></div>
+				<textarea id="api_req_schematextarea" style="display: none"
+                          rows="30" cols="80"></textarea>
+
+            <div id="api_req_schemacontent" style="padding: 10px;"></div>
+        </div>
+    </div>
+
+		<textarea id="api_req_schemaschematextarea" style="display: none"
+                  rows="30" cols="80" name="sourcearea">
+{
+	"id": "Schema",
+	"type": "map",
+	"text": "A schema describing a particular JSON format",
+	"required": true,
+	"mapping": {
+		"type": {
+			"type": "str",
+			"required": true,
+			"id": "Type (type)",
+			"text": "The datatype of the property (e.g. number, boolean, etc), used for determining the semantics of the variable described",
+			"enum": ["any",
+			"str",
+			"int",
+			"number",
+			"bool",
+			"seq",
+			"map",
+			"idref"],
+			"desc_enum": {
+				"any": "Any datatype allowed",
+				"str": "String",
+				"int": "Integer number",
+				"number": "Any number (floating point or integer)",
+				"bool": "Boolean (true or false) value",
+				"seq": "Nested sequence of items ('array' in many languages).  You must also have a 'sequence' property which is itself a sequence containing a single schema definition",
+				"map": "Nested mapping of key/value pairs (a.k.a. 'properties').  You must also have a 'mapping' property which is itself a sequence containing a single schema definition"
+			}
+		},
+		"id": {
+			"type": "str",
+			"id": "Identifier (id)",
+			"text": "An identifier used to reference this property using the 'idref' property"
+		},
+		"text": {
+			"type": "str",
+			"id": "Description (text)",
+			"text": "A description for use in documentation and context help"
+		},
+		"user_key": {
+			"type": "str",
+			"id": "User named key (user_key)",
+			"text": "Key for properties named by the user.  Use only when type=map, and ensure there's a corresponding property schema in the mapping"
+		},
+		"idref": {
+			"type": "str",
+			"id": "Identifier reference (idref)",
+			"text": "Reference to a schema segment with the given 'id' property.  The 'type' attribute must be set to 'idref'."
+		},
+		"enum": {
+			"type": "seq",
+			"sequence": [{
+				"type": "any"
+			}],
+			"id": "Enumeration (enum)",
+			"text": "Enumerated sequence of valid values for this property."
+		},
+		"desc_enum": {
+			"type": "map",
+			"user_key": "enumdesc",
+			"mapping": {
+				"enumdesc": {
+					"id": "Description for enum value",
+					"type": "str",
+					"text": "A mapping containing a description for each possible value listed in the enumeration (enum) property.  Used for documentation and context help."
+				}
+			}
+		},
+		"format": {
+			"type": "str",
+			"id": "Strig format",
+			"text": "Format for this property.",
+			"enum": ["date",
+			"datetime"]
+		},
+		"required": {
+			"type": "bool",
+			"id": "Required property? (required)",
+			"text": "If 'true', then this property must always be present"
+		},
+		"validators": {
+			"type": "seq",
+			"id": "Property validators.",
+			"text": "",
+			"sequence": [{
+				"type": "map",
+				"user_key": "validatorItem",
+				"mapping": {
+					"validatorItem": {
+						"type": "any"
+					}
+				}
+			}]
+		},
+		"mapping": {
+			"type": "map",
+			"id": "Mapping (mapping)",
+			"text": "A mapping containing schema segments describing each property in the mapping.  The 'type' property must be set to 'map' to use this property.",
+			"user_key": "schemachild",
+			"mapping": {
+				"schemachild": {
+					"type": "idref",
+					"idref": "schemanode"
+				}
+			}
+		},
+		"sequence": {
+			"type": "seq",
+			"id": "Sequence (sequence)",
+			"text": "A sequence containing a single schema segment",
+			"sequence": [{
+				"type": "idref",
+				"idref": "schemanode"
+			}]
+		}
+	}
+}
+			</textarea>
+</div>
+<div data-options="region:'east',split:true,title:'响应'"
+     style="width: 380px; padding: 10px;">
+    <div id="api_respdiv">
+        <div id="api_resp_headerdiv" title="响应头" style="padding: 10px;">
+        </div>
+        <div id="api_resp_contentdiv" title="响应体"
+             style="padding: 10px;"></div>
+    </div>
+</div>
+<div data-options="region:'south',border:false" style="background: #f1f3e9">
+    <div id="footer">
+        <div>&nbsp;</div>
+        © 2015-2030 www.cloudcare-partners.com
+        <div>&nbsp;</div>
+    </div>
+</div>
+</body>
+</html>

@@ -16,7 +16,19 @@
         <module>ccl-java_encryption</module>
         <module>ccl-javaCreateDoc</module>
         <module>ccl-javatest</module>
+        <module>vmware-ws-simple</module>
+        <module>ccl-vmvaretest</module>
+        <module>ccl-cookie</module>
+        <module>ccl-javaSpider</module>
+        <module>ccl-Pattern</module>
+        <module>ccl-http</module>
     </modules>
 
-
+<dependencies>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+    </dependency>
+</dependencies>
 </project>

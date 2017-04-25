@@ -1,0 +1,124 @@
+.cm-key {
+	color: #164;
+}
+
+.cm-null {
+	color: red;
+}
+
+.cm-number {
+	color: purple;
+}
+
+.cm-string {
+	color: #2A00FF;
+}
+
+.cm-boolean {
+	color: fuchsia;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.jsonname {
+	color: #164;
+}
+
+.jsonnull {
+	color: red;
+}
+
+.jsonboolean {
+	color: fuchsia;
+}
+
+.jsonnumber {
+	color: purple;
+}
+
+.jsonstring {
+	color: #2A00FF;
+}
+
+.jsontag {
+	color: black;
+}
+
+.jsonhighlight {
+	color: red;
+}
+
+.field_label {
+	width: 160px;
+	display: inline-block;
+	color: #164;
+}
+
+.msg {
+	padding: 4px;
+	font-size: small;
+}
+
+.info {
+	color: green;
+	padding: 4px;
+	font-size: small;
+}
+
+.warn {
+	color: orange;
+	padding: 4px;
+	font-size: small;
+}
+
+.error {
+	color: red;
+	padding: 4px;
+	font-size: small;
+}
+
+.responseHeader {
+	height: 54px;
+	margin-bottom: 5px;
+	border-bottom: 1px dashed gray;
+}
+
+.historyLink {
+	padding: 5px;
+}
+
+a {
+	color: #404040;
+	text-decoration: none;
+	outline: none;
+}
+
+.linkHover {
+	background: #E0F892;
+	color: #404040;
+}
+
+.linkHover a {
+	color: #326ea1;
+}
+
+.linkSelected {
+	background: #c8d47b;
+}
+
+.linkSelected a {
+	color: navy;
+}
+
+#api_respdiv,#api_reqdiv{
+    height: 100% !important;
+}
+
+#api_respdiv .tabs-panels-top,
+#api_reqdiv .tabs-panels-top {
+    height: 95% !important;
+    overflow: auto;
+}

@@ -25,6 +25,7 @@
         <module name="ccl-java_encryption" />
         <module name="ccl-javaCreateDoc" />
         <module name="ccl-jetty" />
+        <module name="ccl-Pattern" />
         <module name="common-utils" />
         <module name="ddddd" />
       </profile>
@@ -49,17 +50,59 @@
         <processorPath useClasspath="true" />
         <module name="ccl-javatest" />
       </profile>
+      <profile default="false" name="Annotation profile for vmware-ws-simple" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="vmware-ws-simple" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-vmvaretest" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-vmvaretest" />
+      </profile>
+      <profile default="false" name="Annotation profile for cookie-biz" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="cookie-biz" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-javaSpider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-javaSpider" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-http" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-http" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ccl-cookie" target="1.5" />
       <module name="ccl-elasticsearch" target="1.7" />
+      <module name="ccl-http" target="1.7" />
       <module name="ccl-java_encryption" target="1.5" />
       <module name="ccl-javaCreateDoc" target="1.5" />
-      <module name="ccl-javatest" target="1.7" />
+      <module name="ccl-javaSpider" target="1.6" />
+      <module name="ccl-javatest" target="1.8" />
       <module name="ccl-jetty" target="1.5" />
+      <module name="ccl-Pattern" target="1.5" />
+      <module name="ccl-vmvaretest" target="1.6" />
       <module name="ccl-web" target="1.6" />
       <module name="cclTest" target="1.5" />
       <module name="common-utils" target="1.5" />
+      <module name="cookie-biz" target="1.8" />
       <module name="ddddd" target="1.5" />
+      <module name="vmware-ws-simple" target="1.8" />
       <module name="web-ccl" target="1.5" />
     </bytecodeTargetLevel>
   </component>

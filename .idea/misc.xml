@@ -15,6 +15,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/ccl-cookie/pom.xml" />
         <option value="$PROJECT_DIR$/common-utils/pom.xml" />
         <option value="$PROJECT_DIR$/ddddd/pom.xml" />
         <option value="$PROJECT_DIR$/web-ccl/pom.xml" />

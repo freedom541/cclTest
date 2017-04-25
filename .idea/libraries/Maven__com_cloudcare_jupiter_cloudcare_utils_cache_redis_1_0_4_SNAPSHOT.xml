@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.cloudcare.jupiter:cloudcare-utils-cache-redis:1.0.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-cache-redis/1.0.4-SNAPSHOT/cloudcare-utils-cache-redis-1.0.4-20170411.094127-39.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-cache-redis/1.0.4-SNAPSHOT/cloudcare-utils-cache-redis-1.0.4-20170411.094127-39-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-cache-redis/1.0.4-SNAPSHOT/cloudcare-utils-cache-redis-1.0.4-20170411.094127-39-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

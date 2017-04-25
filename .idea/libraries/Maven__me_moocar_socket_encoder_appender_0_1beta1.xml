@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: me.moocar:socket-encoder-appender:0.1beta1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/me/moocar/socket-encoder-appender/0.1beta1/socket-encoder-appender-0.1beta1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/me/moocar/socket-encoder-appender/0.1beta1/socket-encoder-appender-0.1beta1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/me/moocar/socket-encoder-appender/0.1beta1/socket-encoder-appender-0.1beta1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

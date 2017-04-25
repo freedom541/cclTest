@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.cloudcare.jupiter:cloudcare-web-client:1.0.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-web-client/1.0.4-SNAPSHOT/cloudcare-web-client-1.0.4-20170411.094131-39.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-web-client/1.0.4-SNAPSHOT/cloudcare-web-client-1.0.4-20170411.094131-39-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-web-client/1.0.4-SNAPSHOT/cloudcare-web-client-1.0.4-20170411.094131-39-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

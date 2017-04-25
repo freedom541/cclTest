@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.cloudcare.jupiter:cloudcare-utils-async:1.0.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-async/1.0.4-SNAPSHOT/cloudcare-utils-async-1.0.4-20170411.094124-37.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-async/1.0.4-SNAPSHOT/cloudcare-utils-async-1.0.4-20170411.094124-37-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-utils-async/1.0.4-SNAPSHOT/cloudcare-utils-async-1.0.4-20170411.094124-37-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ccl-cookie" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-cookie/cookie-biz" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccl-elasticsearch/src/main/java/com/ccl/elasticsearch/foo/EsClient.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
