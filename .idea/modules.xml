@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ccl-springDemo/cc-springDemo.iml" filepath="$PROJECT_DIR$/ccl-springDemo/cc-springDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-Pattern/ccl-Pattern.iml" filepath="$PROJECT_DIR$/ccl-Pattern/ccl-Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" filepath="$PROJECT_DIR$/ccl-elasticsearch/ccl-elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-http/ccl-http.iml" filepath="$PROJECT_DIR$/ccl-http/ccl-http.iml" />
@@ -9,9 +10,13 @@
       <module fileurl="file://$PROJECT_DIR$/ccl-javaSpider/ccl-javaSpider.iml" filepath="$PROJECT_DIR$/ccl-javaSpider/ccl-javaSpider.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-java_encryption/ccl-java_encryption.iml" filepath="$PROJECT_DIR$/ccl-java_encryption/ccl-java_encryption.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-javatest/ccl-javatest.iml" filepath="$PROJECT_DIR$/ccl-javatest/ccl-javatest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-jersey-jetty/ccl-jersey-jetty.iml" filepath="$PROJECT_DIR$/ccl-jersey-jetty/ccl-jersey-jetty.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" filepath="$PROJECT_DIR$/ccl-jetty/ccl-jetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-spring-jetty-jersey-mybatis/ccl-spring-jetty-jersey-mybatis.iml" filepath="$PROJECT_DIR$/ccl-spring-jetty-jersey-mybatis/ccl-spring-jetty-jersey-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-springMVC-jetty-webapp/ccl-springMVC-jetty-webapp.iml" filepath="$PROJECT_DIR$/ccl-springMVC-jetty-webapp/ccl-springMVC-jetty-webapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-vmvaretest/ccl-vmvaretest.iml" filepath="$PROJECT_DIR$/ccl-vmvaretest/ccl-vmvaretest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-web/ccl-web.iml" filepath="$PROJECT_DIR$/ccl-web/ccl-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccl-zstack-cookie/ccl-zstack-cookie.iml" filepath="$PROJECT_DIR$/ccl-zstack-cookie/ccl-zstack-cookie.iml" />
       <module fileurl="file://$PROJECT_DIR$/cclTest.iml" filepath="$PROJECT_DIR$/cclTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/common-utils/common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccl-cookie/cookie-biz/cookie-biz.iml" filepath="$PROJECT_DIR$/ccl-cookie/cookie-biz/cookie-biz.iml" />

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.cloudcare.jupiter:cloudcare-admin-api:1.0.4-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170411.094129-39.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170420.061629-40.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170411.094129-39-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170420.061629-40-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170411.094129-39-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/cloudcare/jupiter/cloudcare-admin-api/1.0.4-SNAPSHOT/cloudcare-admin-api-1.0.4-20170420.061629-40-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

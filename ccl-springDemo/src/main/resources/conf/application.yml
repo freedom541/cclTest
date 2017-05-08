@@ -1,0 +1,17 @@
+database:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://db.cloudcare.com:3306/cbis_cloud_adapter?zeroDateTimeBehavior=convertToNull
+  username: cbis
+  password: "zy#CBIS@2"
+  maxIdle: 5
+  maxActive: 100
+
+vmware:
+  image:
+    path: "[datastore1]images/"
+  sysdisk:
+    path: "[datastore1] sysdisk/"
+  baseurl: "https://10.200.6.92:7343"
+  host: "10.200.6.92:443"
+  cpuRate: "10"
+  memoryRate: "1.5"

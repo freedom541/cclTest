@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sdk-1.10.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ccl-zstack-cookie/src/main/lib/sdk-1.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../gitHubSpace/zstack/sdk/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

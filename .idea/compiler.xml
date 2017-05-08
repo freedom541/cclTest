@@ -22,11 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ccl-java_encryption" />
-        <module name="ccl-javaCreateDoc" />
-        <module name="ccl-jetty" />
-        <module name="ccl-Pattern" />
-        <module name="common-utils" />
         <module name="ddddd" />
       </profile>
       <profile default="false" name="Annotation profile for ccl-web" enabled="true">
@@ -85,21 +80,96 @@
         <processorPath useClasspath="true" />
         <module name="ccl-http" />
       </profile>
+      <profile default="false" name="Annotation profile for common-utils" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="common-utils" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-Pattern" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-Pattern" />
+      </profile>
+      <profile default="false" name="Annotation profile for cc-springDemo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="cc-springDemo" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-jetty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-jetty" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-javaCreateDoc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-javaCreateDoc" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-java_encryption" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-java_encryption" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-jersey-jetty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-jersey-jetty" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-spring-jetty-jersey-mybatis" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-spring-jetty-jersey-mybatis" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-springMVC-jetty-webapp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-springMVC-jetty-webapp" />
+      </profile>
+      <profile default="false" name="Annotation profile for ccl-zstack-cookie" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ccl-zstack-cookie" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cc-springDemo" target="1.8" />
       <module name="ccl-cookie" target="1.5" />
       <module name="ccl-elasticsearch" target="1.7" />
       <module name="ccl-http" target="1.7" />
-      <module name="ccl-java_encryption" target="1.5" />
-      <module name="ccl-javaCreateDoc" target="1.5" />
+      <module name="ccl-java_encryption" target="1.8" />
+      <module name="ccl-javaCreateDoc" target="1.8" />
       <module name="ccl-javaSpider" target="1.6" />
       <module name="ccl-javatest" target="1.8" />
-      <module name="ccl-jetty" target="1.5" />
-      <module name="ccl-Pattern" target="1.5" />
+      <module name="ccl-jersey-jetty" target="1.8" />
+      <module name="ccl-jetty" target="1.8" />
+      <module name="ccl-Pattern" target="1.8" />
+      <module name="ccl-spring-jetty-jersey-mybatis" target="1.8" />
+      <module name="ccl-springMVC-jetty-webapp" target="1.7" />
       <module name="ccl-vmvaretest" target="1.6" />
       <module name="ccl-web" target="1.6" />
-      <module name="cclTest" target="1.5" />
-      <module name="common-utils" target="1.5" />
+      <module name="ccl-zstack-cookie" target="1.8" />
+      <module name="cclTest" target="1.8" />
+      <module name="common-utils" target="1.8" />
       <module name="cookie-biz" target="1.8" />
       <module name="ddddd" target="1.5" />
       <module name="vmware-ws-simple" target="1.8" />

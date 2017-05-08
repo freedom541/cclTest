@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-Pattern" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccl-cookie" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccl-cookie/cookie-biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ccl-elasticsearch/src/main/java/com/ccl/elasticsearch/foo/EsClient.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-http" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-javaCreateDoc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-javaSpider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-java_encryption" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-javatest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-jersey-jetty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-jetty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-spring-jetty-jersey-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-springDemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-springMVC-jetty-webapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-vmvaretest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ccl-zstack-cookie" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-utils" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vmware-ws-simple" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
