@@ -1,7 +1,7 @@
 package com.ccl.jersey.service.impl;
 
 import com.ccl.jersey.model.User;
-import com.ccl.jersey.repository.UserRepository;
+import com.ccl.jersey.repository.SimpleUserRepository;
 import com.ccl.jersey.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -23,7 +24,7 @@ import java.util.UUID;
 @Service
 public class DefultUserService implements UserService{
     @Autowired
-    UserRepository userRepository;
+    SimpleUserRepository simpleUserRepository;
 
     @Override
     public List<User> getUser() {
@@ -62,13 +63,31 @@ public class DefultUserService implements UserService{
 
     @Override
     public List<User> findAllUser() {
-        return userRepository.findAll();
+        return simpleUserRepository.findAll();
     }
 
     @Override
     @Transactional
     public void addUser() {
         String uuid = UUID.randomUUID().toString().substring(0,6);
-        userRepository.addUser(uuid);
+        simpleUserRepository.addUser(uuid);
     }
+
+    @Override
+    @Transactional
+    public void updateUser() {
+        String uuid = UUID.randomUUID().toString().substring(0,6);
+        int id = 4;
+        simpleUserRepository.updateUser(id,uuid);
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser() {
+        Random r = new Random();
+        int id = r.nextInt(40);
+        System.out.println("id = " + id);
+        simpleUserRepository.deleteUser(id);
+    }
+
 }
