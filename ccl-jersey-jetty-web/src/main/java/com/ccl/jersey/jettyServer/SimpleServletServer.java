@@ -7,7 +7,7 @@ package com.ccl.jersey.jettyServer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import com.sun.jersey.spi.container.servlet.ServletContainer;
+import org.glassfish.jersey.servlet.ServletContainer;
 
 public class SimpleServletServer {
     public static void main(String[] args) throws Exception {

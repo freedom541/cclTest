@@ -3,7 +3,8 @@ package com.ccl.jersey;
 /**
  * Created by ccl on 17/8/10.
  */
-import net.sf.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -29,7 +30,7 @@ public class JerseyDemo {
         }
         Map<String, String> map = new HashMap<String, String>();
         map.put("name", this.name);
-        return JSONObject.fromObject(map).toString();
+        return JSON.toJSONString(map);
     }
 
 
@@ -39,6 +40,6 @@ public class JerseyDemo {
     public String test2( ){
         Map<String, String> map = new HashMap<String, String>();
         map.put("name", "zhangsan");
-        return JSONObject.fromObject(map).toString();
+        return JSON.toJSONString(map);
     }
 }

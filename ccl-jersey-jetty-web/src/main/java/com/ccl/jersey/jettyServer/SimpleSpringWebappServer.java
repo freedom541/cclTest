@@ -11,22 +11,28 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.glassfish.jersey.servlet.ServletContainer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.request.RequestContextListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
-public class SimpleServletWebappServer {
+public class SimpleSpringWebappServer {
     public static void main(String[] args) throws Exception {
         try {
             Server server = new Server(8088);//1.建立server，设置端口
-            ServletHolder sh = new ServletHolder(ServletContainer.class);//2.servlet
             //3.请求处理资源
-            sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
-            sh.setInitParameter("com.sun.jersey.config.property.packages", "com.ccl.jersey");
+            ApplicationConfig applicationConfig = new ApplicationConfig();
+            ServletHolder sh = new ServletHolder(new ServletContainer(applicationConfig));
 
             ServletContextHandler servletContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
             servletContext.setContextPath("/rest");
             servletContext.addServlet(sh,"/*");
-//            servletContext.addServlet(new ServletHolder(new HelloServlet("Buongiorno Mondo")),"/it/*");
-//            servletContext.addServlet(new ServletHolder(new HelloServlet("Bonjour le Monde")),"/fr/*");
-
+            servletContext.addEventListener(new ContextLoaderListener());
+            servletContext.addEventListener(new RequestContextListener());
+            servletContext.setInitParameter("contextClass", AnnotationConfigWebApplicationContext.class.getName());
+            servletContext.setInitParameter("contextConfigLocation", SpringRootConfiguration.class.getName());
 
             WebAppContext webAppContext = new WebAppContext();
             webAppContext.setContextPath("/"); //4.上下文路径  http://localhost:8088/
@@ -62,4 +68,10 @@ public class SimpleServletWebappServer {
         }
     }
 
+    @Configuration
+    @ComponentScan("com.ccl.jersey")
+    @ImportResource({"classpath*:META-INF/spring/*.xml"})
+    public static class SpringRootConfiguration {
+
+    }
 }

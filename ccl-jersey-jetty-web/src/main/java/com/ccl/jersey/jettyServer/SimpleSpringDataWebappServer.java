@@ -7,27 +7,53 @@ package com.ccl.jersey.jettyServer;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.glassfish.jersey.servlet.ServletContainer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.request.RequestContextListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
-public class SimpleServletWebappServer {
+import javax.servlet.DispatcherType;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
+
+public class SimpleSpringDataWebappServer {
     public static void main(String[] args) throws Exception {
         try {
             Server server = new Server(8088);//1.建立server，设置端口
-            ServletHolder sh = new ServletHolder(ServletContainer.class);//2.servlet
             //3.请求处理资源
-            sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
-            sh.setInitParameter("com.sun.jersey.config.property.packages", "com.ccl.jersey");
+            ApplicationConfig applicationConfig = new ApplicationConfig();
+            ServletHolder sh = new ServletHolder(new ServletContainer(applicationConfig));
 
             ServletContextHandler servletContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
             servletContext.setContextPath("/rest");
             servletContext.addServlet(sh,"/*");
-//            servletContext.addServlet(new ServletHolder(new HelloServlet("Buongiorno Mondo")),"/it/*");
-//            servletContext.addServlet(new ServletHolder(new HelloServlet("Bonjour le Monde")),"/fr/*");
+            servletContext.addEventListener(new ContextLoaderListener());
+            servletContext.addEventListener(new RequestContextListener());
+            servletContext.setInitParameter("contextClass", AnnotationConfigWebApplicationContext.class.getName());
+            servletContext.setInitParameter("contextConfigLocation", SpringRootConfiguration.class.getName());
 
+            //添加乱码过滤
+            FilterHolder filterHolder = new FilterHolder(new CharacterEncodingFilter());
+            Map<String, String> initParams = new HashMap<>();
+            initParams.put("encoding", "UTF-8");
+            initParams.put("forceEncoding", "true");
+            if (null != initParams) {
+                for (Map.Entry<String, String> entry : initParams.entrySet()) {
+                    filterHolder.setInitParameter(entry.getKey(), entry.getValue());
+                }
+            }
+            servletContext.addFilter(filterHolder, "/*", EnumSet.of(DispatcherType.REQUEST));
 
+            //web层设置
             WebAppContext webAppContext = new WebAppContext();
             webAppContext.setContextPath("/"); //4.上下文路径  http://localhost:8088/
             webAppContext.setResourceBase("ccl-jersey-jetty-web/src/main/webapp"); // 你的资源文件所在的路径
@@ -62,4 +88,10 @@ public class SimpleServletWebappServer {
         }
     }
 
+    @Configuration
+    @ComponentScan("com.ccl.jersey")
+    @ImportResource({"classpath*:META-INF/spring/*.xml"})
+    public static class SpringRootConfiguration {
+
+    }
 }
