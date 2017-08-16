@@ -1,7 +1,7 @@
-package com.ccl.jersey;
+package com.ccl.jersey.action;
 
-import com.ccl.jersey.service.QLUserService;
-import com.ccl.querydsl.data.model.User;
+import com.ccl.jersey.model.User;
+import com.ccl.jersey.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
@@ -13,10 +13,10 @@ import java.util.List;
 /**
  * Created by ccl on 17/8/14.
  */
-@Path("/querydsl")
-public class SpringQueryDslAction {
+@Path("/data")
+public class SpringDataDemo {
     @Autowired
-    private QLUserService userService;
+    private UserService userService;
 
     @Autowired
     private ServletResponse response;
@@ -25,6 +25,14 @@ public class SpringQueryDslAction {
 
     @GET
     @Path("/list")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<User> getUser(){
+        return userService.getUserData();
+    }
+
+
+    @GET
+    @Path("/findall")
     @Produces(MediaType.APPLICATION_JSON)
     public List<User> findAll(){
         return userService.findAllUser();

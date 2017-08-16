@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by ccl on 17/8/14.
@@ -25,16 +27,26 @@ public class QuseryDslUserService implements QLUserService {
 
     @Override
     public void addUser() {
-
+        User user = new User();
+        String uuid = UUID.randomUUID().toString().substring(0,6);
+        user.setName(uuid);
+        userRepository.createModel(user);
     }
 
     @Override
     public void updateUser() {
-
+        User user = new User();
+        String uuid = UUID.randomUUID().toString().substring(0,6);
+        user.setName(uuid);
+        user.setId(4);
+        userRepository.updateModelWithNotNull(user);
     }
 
     @Override
     public void deleteUser() {
-
+        Random r = new Random();
+        int id = r.nextInt(40) + 5;
+        System.out.println("id = " + id);
+        userRepository.deleteModel(id);
     }
 }

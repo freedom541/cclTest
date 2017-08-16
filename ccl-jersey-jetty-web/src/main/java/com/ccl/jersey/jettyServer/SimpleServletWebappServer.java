@@ -10,16 +10,20 @@ import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.glassfish.jersey.jackson.JacksonFeature;
+import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
 public class SimpleServletWebappServer {
     public static void main(String[] args) throws Exception {
         try {
             Server server = new Server(8088);//1.建立server，设置端口
-            ServletHolder sh = new ServletHolder(ServletContainer.class);//2.servlet
-            //3.请求处理资源
-            sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
-            sh.setInitParameter("com.sun.jersey.config.property.packages", "com.ccl.jersey");
+            // Create JAX-RS application.
+            final ResourceConfig application = new ResourceConfig()
+                    .packages("com.ccl.jersey.action")
+                    .register(JacksonFeature.class);
+
+            ServletHolder sh = new ServletHolder(new ServletContainer(application));//2.servlet
 
             ServletContextHandler servletContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
             servletContext.setContextPath("/rest");

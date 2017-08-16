@@ -1,4 +1,4 @@
-package com.ccl.jersey;
+package com.ccl.jersey.action;
 
 import com.ccl.jersey.model.User;
 import com.ccl.jersey.service.UserService;

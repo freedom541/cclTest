@@ -1,4 +1,4 @@
-package com.ccl.jersey;
+package com.ccl.jersey.action;
 
 /**
  * Created by ccl on 17/8/10.
